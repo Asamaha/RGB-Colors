@@ -66,4 +66,15 @@ $(document).ready(function() {
         var temp = document.getElementById(theAnswer);
         $(temp).addClass('secretWinner');
         // end button generation
+        
+        // demo value for theAnswer: "rgba(202, 67, 118, 1)""
+        // creats a header with hinted colors in the background based on current value of theAnswer
+        var ACArr = theAnswer.split(', ');
+        ACArr[0] = ACArr[0].slice(5);
+        ACArr[3] = ACArr[0].slice(0, -1);
+        var displayAnswer = $('<div><p>which color is:</p>rgb(' + '<span class="red">' + padTextNumber(ACArr[0]) + '</span>,' + '<span class="green">' + padTextNumber(ACArr[1]) + '</span>,' + '<span class="blue">' + padTextNumber(ACArr[2]) + '</span>' + ')</div>');
+        displayAnswer.attr('id', 'theAnswer');
+        displayAnswer.addClass('gameTalk');
+        canvas.prepend(displayAnswer);
 });
+
