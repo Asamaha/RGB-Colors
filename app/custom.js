@@ -25,8 +25,8 @@ $(document).ready(function() {
 
         }
 
-        
-         // populate wideArrColors array
+
+        // populate wideArrColors array
         _.times(rainbowSize, function(index) {
             wideArrColors.push(newColor());
         });
@@ -66,7 +66,7 @@ $(document).ready(function() {
         var temp = document.getElementById(theAnswer);
         $(temp).addClass('secretWinner');
         // end button generation
-        
+
         // demo value for theAnswer: "rgba(202, 67, 118, 1)""
         // creats a header with hinted colors in the background based on current value of theAnswer
         var ACArr = theAnswer.split(', ');
@@ -112,8 +112,8 @@ $(document).ready(function() {
         }
     } // end buildNewRound()
 
-     // helper functions
-    function newColor(){
+    // helper functions
+    function newColor() {
         var color = 'rgba(' + _.random(0, 255) + ', ' + _.random(0, 255) + ', ' + _.random(0, 255) + ', ' + '1)';
         return color;
     }
@@ -129,9 +129,9 @@ $(document).ready(function() {
         return padded;
     }
 
-     // only doing this once; these are popups that stay hidden unless needed
+    // only doing this once; these are popups that stay hidden unless needed
     function makeAndHideDivs() {
-       
+
         var displayWin = $('<div><p>You win!</p></div>');
         displayWin.attr('id', 'youWin');
         displayWin.addClass('gameTalk popup');
@@ -210,4 +210,3 @@ $(document).ready(function() {
     globalAnswer = theAnswer;
 
 });
-
