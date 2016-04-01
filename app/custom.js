@@ -33,4 +33,14 @@ $(document).ready(function() {
 
         // produce the answer
         theAnswer = wideArrColors[_.random(0, rainbowSize - 1)];
+
+        // make buttons
+        _.each(wideArrColors, function(element, index, list) {
+            var myDiv = $('<div>' + +'</div>');
+            myDiv.attr('id', element);
+            myDiv.addClass('choiceBtn');
+            myDiv.css('background-color', element)
+            myDiv.appendTo(canvas);
+
+        });
 });
