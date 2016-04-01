@@ -129,5 +129,66 @@ $(document).ready(function() {
         return padded;
     }
 
+     // only doing this once; these are popups that stay hidden unless needed
+    function makeAndHideDivs() {
+       
+        var displayWin = $('<div><p>You win!</p></div>');
+        displayWin.attr('id', 'youWin');
+        displayWin.addClass('gameTalk popup');
+        canvas.prepend(displayWin);
+
+        var displayLose = $('<div><p>Alas!</p></div>');
+        displayLose.attr('id', 'youLose');
+        displayLose.addClass('gameTalk popup');
+        canvas.prepend(displayLose);
+
+        var score = $('<div><p>Score: <span id="scoreDisplay">0</span></p></div>');
+        score.attr('id', 'score');
+        score.addClass('gameTalk');
+        $('.footer').append(score);
+
+        var numColors = $('<div class="rainbowSizeUI"><span id="addColors">+</span> Colors <span id="removeColors">-</span> <span id="toggleHints">Hints</span></div>');
+        numColors.attr('id', 'numColors');
+        numColors.addClass('gameTalk');
+        $('.footer').append(numColors);
+
+        var $addColorsBtn = $('#addColors');
+        $addColorsBtn.addClass('btn');
+        $addColorsBtn.on('click', function() {
+            if (rainbowSize < 15) {
+                rainbowSize++;
+                anywhereClickReset();
+
+                anywhereClickReset();
+            }
+        });
+        var $removeColorsBtn = $('#removeColors');
+        $removeColorsBtn.addClass('btn');
+        $removeColorsBtn.on('click', function() {
+            if (rainbowSize > 1) {
+                rainbowSize--;
+                anywhereClickReset();
+            }
+        });
+        var $toggleHintsBtn = $('#toggleHints');
+        $toggleHintsBtn.addClass('btn');
+        $toggleHintsBtn.on('click', function() {
+            if (hints) {
+                $('.barChart').css('opacity', 0);
+                $('#lum2').css('opacity', 0)
+                $toggleHintsBtn.removeClass('sadGlow');
+                hints = false;
+            } else {
+                $('.barChart').css('opacity', .3);
+                $('#lum2').css('opacity', 1)
+                $toggleHintsBtn.removeClass('sadGlow');
+
+                hints = true;
+            }
+        });
+        displayWin.hide();
+        displayLose.hide();
+    }
+
 });
 
