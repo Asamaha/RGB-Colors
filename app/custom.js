@@ -25,7 +25,7 @@ $(document).ready(function() {
 
         }
 
-        }
+        
          // populate wideArrColors array
         _.times(rainbowSize, function(index) {
             wideArrColors.push(newColor());
