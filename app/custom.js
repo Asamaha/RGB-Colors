@@ -43,4 +43,21 @@ $(document).ready(function() {
             myDiv.appendTo(canvas);
 
         });
+
+        $('.choiceBtn').on('click', function(event) {
+            if ($(this).attr('id') === theAnswer) {
+                $(this).addClass('glow');
+                $('#youWin').show(10, function() {
+                    score++;
+                    numWrong = 0;
+                    anywhereClickReset();
+                });
+            } else {
+                $('#youLose').show(10, function() {
+                    $('.secretWinner').addClass('sadGlow');
+                    numWrong++;
+                    anywhereClickReset();
+                });
+            }
+        });
 });
