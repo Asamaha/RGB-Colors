@@ -112,5 +112,22 @@ $(document).ready(function() {
         }
     } // end buildNewRound()
 
+     // helper functions
+    function newColor(){
+        var color = 'rgba(' + _.random(0, 255) + ', ' + _.random(0, 255) + ', ' + _.random(0, 255) + ', ' + '1)';
+        return color;
+    }
+
+    function padTextNumber(numStr) {
+        var padded = numStr;
+
+        if (Number(numStr) < 10) {
+            padded = '&nbsp&nbsp' + numStr;
+        } else if (Number(numStr) < 100) {
+            padded = '&nbsp' + numStr;
+        }
+        return padded;
+    }
+
 });
 
