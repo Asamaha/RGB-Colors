@@ -76,5 +76,19 @@ $(document).ready(function() {
         displayAnswer.attr('id', 'theAnswer');
         displayAnswer.addClass('gameTalk');
         canvas.prepend(displayAnswer);
+
+        // <divclass="barChart"><divclass="colorBar"><divclass="redBar">&nbsp&nbsp</div></div><divclass="colorBar"><divclass="greenBar">&nbsp&nbsp</div></div><divclass="colorBar"><divclass="blueBar">&nbsp&nbsp</div></div></div>
+        var scaleBackChart = .5;
+        var barChartHeight = 255;
+        var barChartWidth = 300;
+        var $barChart = $('<div class="barChart"><svg xmlns="http://www.w3.org/2000/svg" width="300" height="' + barChartHeight * scaleBackChart + '" style="stroke-width: 0px;"><rect fill="red" x="' + 0 + '" y="' + Math.floor(barChartHeight - Number(ACArr[0])) * scaleBackChart + '" width="100" height="' + Number(ACArr[0]) * scaleBackChart + '"></rect><rect fill="green" x="' + 100 + '" y="' + Math.floor(barChartHeight - Number(ACArr[1])) * scaleBackChart + '" width="100" height="' + Number(ACArr[1]) * scaleBackChart + '"></rect><rect fill="blue" x="' + 200 + '" y="' + Math.floor(barChartHeight - Number(ACArr[2])) * scaleBackChart + '" width="100" height="' + Number(ACArr[2]) * scaleBackChart + '"></svg></div>');
+        canvas.prepend($barChart);
+
+
+
+        // update score
+        if (score) {
+            $('#scoreDisplay').text(score);
+        }
 });
 
