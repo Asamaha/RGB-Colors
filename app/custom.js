@@ -60,4 +60,10 @@ $(document).ready(function() {
                 });
             }
         });
+
+        // add this class the old-school way with DOM selectors so that I can finally go to sleep without jQuery and Sizzle exploding about how rgba(###, ###, ###, 1) looks like an invalid script injection
+        // (this flags the correct answer, so I can show it if the user doesn't select it)
+        var temp = document.getElementById(theAnswer);
+        $(temp).addClass('secretWinner');
+        // end button generation
 });
