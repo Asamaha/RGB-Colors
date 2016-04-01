@@ -189,6 +189,25 @@ $(document).ready(function() {
         displayWin.hide();
         displayLose.hide();
     }
+    // begin a new round! Remove all elements that need to be rebuilt
+    // then run the buildNewRound() function. 
+    // Remove the "click" event that triggers this reset from the whole body of the page.
+    function anywhereClickReset() {
+        $('body').on('click', function() {
+            $('#youWin').hide();
+            $('#youLose').hide();
+            $('#theAnswer').remove();
+            $('.choiceBtn').remove();
+            $('.lum').remove();
+            $('svg').remove();
+            wideArrColors = [];
+            theAnswer = '';
+            buildNewRound();
+            $('body').unbind();
+
+        });
+    }
+    globalAnswer = theAnswer;
 
 });
 
