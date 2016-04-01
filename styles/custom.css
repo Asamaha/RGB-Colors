@@ -152,6 +152,48 @@ div .choiceBtn {
 
 .secretWinner {}
 
+p.popup {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+span.red {
+    color: rgba(100, 0, 0, .7);
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+span.green {
+    color: rgba(0, 100, 0, .7);
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+span.blue {
+    color: rgba(0, 0, 100, .7);
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+div.barChart {
+    text-align: center;
+    margin-top: -110px;
+}
+
+.notes {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, .5);
+}
+
 
 
 
