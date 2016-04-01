@@ -194,24 +194,49 @@ div.barChart {
     color: rgba(0, 0, 0, .5);
 }
 
+.team-member {
+    margin: 0 auto;
+    width: 450px;
+    text-align: center;
+    margin-top: 30px;
+}
 
+.team-member img {
+    border-radius: 10%;
+    width: 30%;
+    margin: 0 auto;
+    border: 2px solid #fff;
+}
 
+ul.social-buttons {
+    margin-bottom: 0;
+}
 
+ul.social-buttons li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    outline: 0;
+    text-align: center;
+    color: #fff;
+    background-color: #222;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
 
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active {
+    background-color: #fed136;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn:active:focus {
+    outline: 0;
+}
